@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root{
+    --green: #27ae60;
+    --black: #444;
+    --black-transparent: rgba(68, 68, 68, 0.401);
+    --azul: #003cff;
+    --azul-fuerte: #002581;
+    --azul-g: linear-gradient(to bottom, var(--azul-fuerte), var(--azul));
+    --rojo: rgb(216, 0, 0);
+    --btn-color: rgb(0, 138, 202);
+    --light-color: #777;
+    --bg-color: #e6e6e6;
+    --border: .1rem solid rgba(0,0,0,.2);
+    --box-shadow: .4rem .4rem 1rem #ccc,
+                -.4rem -.4rem 1rem #fff;
+    --box-shadow-inset: .4rem .4rem 1rem #ccc inset,
+                -.4rem -.4rem 1rem #fff inset; 
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border:none;
+    outline: none;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    position: relative;
+}
+
+.btn {
+    width: 15rem;
+    height: 5rem;
+    background: var(--azul-g);
+    color: #fff;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+span {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    font-size: 4rem;
+    margin: 0 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.btn-cerrar {
+    display: none;
+}
+
+.error {
+    color: var(--rojo);
+    font-size: calc(1rem + .5vw);
+    padding: 0;
+    display: none;
+}
+
+.error {
+    text-align: center;
+    color: var(--rojo);
+    font-size: calc(1rem + .5vw);
+    display: block;
+}
+
+main {
+    text-shadow: 1px 0px 0px black,
+                 0px 1px 0px black,
+                 -1px 0px 0px black,
+                 0px -1px 0px black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    background: var(--azul-g);
+}
+
+.nav {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 40;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #fff;
+    margin: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.btn-cerrar, #contacto {
+    color: #fff;
+    margin: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+main .caja_img {
+    position: relative;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+main .caja_img h2 {
+    display: block;
+    font-size: 6.5rem;
+}
+
+main .caja_img:hover .article {
+    opacity: 1;
+}
+
+main .seccion1 {
+    background: url(../img/auto-g143a361e2_1920.jpg) no-repeat center center/cover;
+    width: 50%;
+    height: calc(50vh - 2.5rem);
+}
+
+main .seccion2 {
+    background: url(../img/treatment-gb2c10e006_1920.jpg) no-repeat center center/cover;
+    width: 50%;
+    height: calc(50vh - 2.5rem);
+}
+
+main .seccion3 {
+    background: url(../img/interior-g3dbe75d0f_1920.jpg) no-repeat center center/cover;
+    width: 50%;
+    height: calc(50vh - 2.5rem);
+}
+
+main .seccion4 {
+    background: url(../img/girl-ga453b7040_1920.jpg) no-repeat center center/cover;
+    width: 50%;
+    height: calc(50vh - 2.5rem);
+}
+
+main .caja_img .article {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 5rem;
+    opacity: 0;
+    z-index: 10;
+}
+
+main .caja_img .article h3 {
+    padding: 1rem;
+    font-size: calc(2.2rem + 1vw);
+    font-weight: 700;
+}
+
+main .caja_img .article p {
+    font-size: calc(2.2rem + 1vw);
+    text-align: center;
+    font-weight: 700;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    padding: 20rem;
+    width: 100%;
+    height: 100vh;
+    background: var(--black-transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(110vh);
+    display: none;
+    overflow-y: scroll;
+    z-index: 50;
+}
+
+.modal.active {
+    transform: translateY(0);
+    transition: .4s linear;
+    display:flex;
+}
+
+.modal article {
+    position: relative;
+    top: 20rem;
+    background: #fff;
+    color: var(--light-color);
+    width: 100%;
+    text-shadow: none;
+    border-radius: .5rem;
+    padding: 2.5rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.modal article p {
+    padding-bottom: 3rem;
+}
+
+.modal article form {
+    width: 100%;
+}
+
+.modal article form input{
+    width: 100%;
+    border: var(--azul) solid;
+    border-radius: .8rem;
+    height: 3.5rem;
+    margin-bottom: 2rem;
+    padding: .5rem;
+}
+
+/* About */
+
+.main-about {
+    text-shadow: none;
+}
+
+.main-about .about{
+    text-align: center;
+    padding: 10rem;
+}
+
+.main-about .about p {
+    color: var(--light-color);
+    font-size: calc(1.2rem + 1vw);
+    font-weight: 600;
+    margin: 4rem 0;
+}
+
+.main-about .imagenes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-about .imagenes .img {
+    width: 30%;
+}
+
+.main-about .imagenes .img .contenedor-img {
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.main-about .imagenes .img .contenedor-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.main-about .imagenes .img h2 {
+    color: var(--light-color);
+    font-size: calc(2rem + 1vw);
+    font-weight: 600;
+    text-align: center;
+}
+
+.main-about .imagenes .img p {
+    color: var(--light-color);
+    font-size: calc(1.2rem + 1vw);
+    font-weight: 600;
+    text-align: center;
+}
+
+@media(max-width: 1400px) {
+
+    main .caja_img h2 {
+        font-size: 4.8rem;
+    }
+
+    main .caja_img .article h3 {
+        font-size: calc(2rem + .9vw);
+    }
+    
+    main .caja_img .article p {
+        font-size: calc(2rem + .8vw);
+    }
+}
+
+@media(max-width: 990px) {
+
+    html {
+        overflow:scroll;
+    }
+
+    main .seccion1 {
+        width: 100%;
+    }
+    
+    main .seccion2 {
+        width: 100%;
+    }
+    
+    main .seccion3 {
+        width: 100%;
+    }
+    
+    main .seccion4 {
+        width: 100%;
+    }
+
+    /*  About  */
+
+    .main-about .about{
+        text-align: center;
+        padding: 5rem;
+    }
+
+    .main-about .about p {
+        color: var(--light-color);
+        font-size: calc(2.2rem + 1vw);
+        font-weight: 600;
+        margin: 4rem 0;
+    }
+
+    .main-about .imagenes {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: space-around;
+        flex-direction: column;
+    }
+
+    .main-about .imagenes .img {
+        width: 100%;
+        margin-bottom: 5rem;
+    }
+}
+
+@media(max-width: 780px) {
+    html {
+        overflow:scroll;
+    }
+
+    .btn-cerrar {
+        display: block;
+    }
+
+    span {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: calc(100vh + 5rem);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        background: var(--azul-g);
+        transform: translateX(-100%);
+        z-index: 40;
+    }
+
+    .nav.active {
+        transform: translatex(0);
+    }
+    
+    .nav a{
+        margin: 2rem;
+        font-size: calc(2.2rem + 3vw);
+    }
+
+    .btn-cerrar, #contacto {
+        margin: 2rem;
+        font-size: calc(2.2rem + 3vw);
+    }
+
+    .btn-cerrar {
+        cursor: pointer;
+    }
+
+    main .seccion1 {
+        background: url(../img/auto-g143a361e2_1920.jpg) no-repeat center center/cover;
+        width: 100%;
+        height: calc(80vh - 2.5rem);
+    }
+    
+    main .seccion2 {
+        background: url(../img/treatment-gb2c10e006_1920.jpg) no-repeat center center/cover;
+        width: 100%;
+        height: calc(80vh - 2.5rem);
+    }
+    
+    main .seccion3 {
+        background: url(../img/interior-g3dbe75d0f_1920.jpg) no-repeat center center/cover;
+        width: 100%;
+        height: calc(80vh - 2.5rem);
+    }
+    
+    main .seccion4 {
+        background: url(../img/girl-ga453b7040_1920.jpg) no-repeat center center/cover;
+        width: 100%;
+        height: calc(80vh - 2.5rem);
+    }
+
+    .modal {
+        padding: 10rem;
+    }
+
+    main .caja_img h2 {
+        font-size: 5.8rem;
+    }
+
+    main .caja_img .article h3 {
+        font-size: calc(2.8rem + .9vw);
+    }
+    
+    main .caja_img .article p {
+        font-size: calc(2.8rem + .8vw);
+    }
+}
+
+@media(max-width:540px) {
+    .modal {
+        padding: 5rem;
+    }
+
+    .modal article {
+        top: 10rem;
+    }
+}

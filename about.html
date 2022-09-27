@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Prueba</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+        <span class="menu"><i class="bi bi-list"></i></span>
+        <nav class="nav">
+            <div class="btn-cerrar" onclick="cerrar()"><i class="bi bi-x-circle"></i> CERRAR</div>
+            <a href="index.html">INICIO</a>
+            <a href="about.html">QUIENES SOMOS</a>
+            <div id="contacto">CONTÁCTANOS</div>
+        </nav>
+    </header>
+    <main class="main-about">
+        <section class="about">
+            <p>Alatorre Avedaño Recursos Corporativos, S.C. nace en 1986 como una sociedad promotora de seguros.</p>
+            <p>En la búsqueda de diferentes alternativas de comercializacíon y con el fin de ampliar sus servicios, se crea AARCO Agente de Seguros y de Finanzas, S.A. de C.V. que le permite actuar como corredor de seguros y de finanzas con las principales Instituciones del ramo establecidas en México.</p>
+        </section>
+        <section class="imagenes">
+            <article class="img">
+                <div class="contenedor-img">
+                    <img src="img/plan_640.jpg" alt="">
+                </div>
+                <h2>MISIÓN</h2>
+                <p>Atracción y desarrollo de personas.</p>
+            </article>
+            <article class="img">
+                <div class="contenedor-img">
+                    <img src="img/vision_640.jpg" alt="">
+                </div>
+                <h2>VISIÓN</h2>
+                <p>Crecimiento.</p>
+            </article>
+            <article class="img">
+                <div class="contenedor-img">
+                    <img src="img/handshake_640.jpg" alt="">
+                </div>
+                <h2>FILOSOFÍA</h2>
+                <p>Servicio.</p>
+            </article>
+        </section>
+
+        <section class="modal" id="modal">
+            <article>
+                <p>Llena el siguiente formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
+                <form action="" id="form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" required>
+                    
+                    <label for="estado">Estado:</label>
+                    <input type="text" name="estado" id="estado" required>
+                    
+                    <label for="municipio">Municipio:</label>
+                    <input type="text" name="municipio" id="municipio" required>
+                    
+                    <label for="colonia">Colonia:</label>
+                    <input type="text" name="colonia" id="colonia" required>
+                    
+                    <label for="postal">Codigo Postal:</label>
+                    <input type="text" name="postal" onkeypress="if(this.value.length == 5) return false;" id="postal" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <input type="text" name="mensaje" id="mensaje" required>
+
+                    <button class="btn" type="submit">Enviar <i class="bi bi-envelope"></i></button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

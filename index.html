@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Prueba</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <section class="modal" id="modal">
+        <article>
+            <p>Llena el siguiente formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
+            <form action="index.html" id="form">
+
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" >
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" >
+
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado" id="estado" >
+
+                <label for="municipio">Municipio:</label>
+                <input type="text" name="municipio" id="municipio" >
+
+                <label for="colonia">Colonia:</label>
+                <input type="text" name="colonia" id="colonia" >
+
+                <label for="postal">Codigo Postal:</label>
+                <input type="number" name="postal" onkeypress="if(this.value.length == 5) return false;" id="postal" >
+
+                <label for="mensaje">Mensaje:</label>
+                <input type="text" name="mensaje" id="mensaje" >
+
+                <button class="btn" type="submit">Enviar <i class="bi bi-envelope"></i></button>
+
+                <p class="error" id="error"></p>
+                
+            </form>
+        </article>
+    </section>
+    <header>
+        <span class="menu"><i class="bi bi-list"></i></span>
+        <nav class="nav">
+            <div class="btn-cerrar" onclick="cerrar()"><i class="bi bi-x-circle"></i> CERRAR</div>
+            <a href="index.html">INICIO</a>
+            <a href="about.html">QUIENES SOMOS</a>
+            <div id="contacto">CONTÁCTANOS</div>
+        </nav>
+    </header>
+    <main>
+        <section class="caja_img seccion1">
+            <article class="article">
+                <h3>PROTEGE:</h3>
+
+                <p>Los daños o pérdida del automovil y los daños o prejuicios causados a la propiedad ajena o a terceras personas con motivo del uso del automóvil.</p>
+            </article>
+            <h2>AUTOS</h2>
+        </section>
+        <section class="caja_img seccion2">
+            <article class="article">
+                <h3>PROTEGE:</h3>
+
+                <p>Los honorarios médicos, hospitalarios y demás que sean necesarios para la recuperación de la salud o vigor vital del asegurado, cuando se hayan afectado po causa de un accidente o enfermedad.</p>
+            </article>
+            <h2>GASTOS MÉDICOS MAYORES</h2>
+        </section>
+        <section class="caja_img seccion3">
+            <article class="article">
+                <h3>PROTEGE:</h3>
+
+                <p>A la vivienda y sus habitantes contra daños que pudieran sufrir a causa de fenómenos naturales o robo, daños que pueda ocacionar una mascota, entre otras cosas.</p>
+            </article>
+            <h2>HOGAR</h2>
+        </section>
+        <section class="caja_img seccion4">
+            <article class="article">
+                <h3>PROTEGE:</h3>
+
+                <p>Es un respaldo económico el cúal su función principal es indemnizar a los beneficiarios designados con una suma de dinero en caso del fallecimiento de la persona asegurada.</p>
+            </article>
+            <h2>VIDA</h2>
+        </section>
+
+        
+    </main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
